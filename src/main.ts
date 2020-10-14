@@ -4,7 +4,6 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import index from './i18n'
-import './validatior'
 import '@/assets/scss/main.scss'
 
 // UI design components

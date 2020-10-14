@@ -28,7 +28,7 @@
     "required": "{_field_}は必須項目です",
     "required_if": "{_field_}は必須項目です",
     "size": "{_field_}は{size}KB以内でなければなりません",
-    "is_video": "The {_field_} field is not a video"
+    "is_video": "{_field_}フィールドは動画ではありません"
   },
   "names": {
     "input": "入力"
