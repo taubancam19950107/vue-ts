@@ -16,6 +16,9 @@ import HelloWorld from '@/components/HelloWorld.vue'
   }
 })
 
+/**
+ * Create component
+ */
 export default class Home extends Vue {
 
 }

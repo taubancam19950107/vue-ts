@@ -14,7 +14,16 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-useless-catch': ['off']
+    'no-useless-catch': ['off'],
+    'require-jsdoc': ['warn', {
+      require: {
+        FunctionDeclaration: true,
+        MethodDefinition: true,
+        ClassDeclaration: true,
+        ArrowFunctionExpression: true,
+        FunctionExpression: true
+      }
+    }]
   },
   overrides: [
     {

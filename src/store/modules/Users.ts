@@ -2,9 +2,12 @@
 import { VuexModule, Module, Mutation, Action } from 'vuex-class-modules'
 import { UserApi } from '@/api/Request/User'
 import store from '../index'
-import User from '@/models/User'
-import Company from '@/models/Company'
+import User from '@/api/Response/User'
+import Company from '@/api/Response/Company'
 
+/**
+ * UsersModule
+ */
 @Module
 class UsersModule extends VuexModule {
   // states
@@ -15,27 +18,43 @@ class UsersModule extends VuexModule {
     url: ''
   }
 
-  // getters
+  /**
+   * Reversed users
+   * @returns {array} - Reversed users
+   */
   get userReverse () {
     return this.users.reverse()
   }
 
+  /**
+   * Company name
+   * @returns {string} - Company name
+   */
   get companyName () {
     return this.company.company
   }
 
-  // mutations
+  /**
+   * Mutation: Set users
+   * @params User[] - User list
+   */
   @Mutation
   setUsers (users: User[]) {
     this.users = users
   }
 
+  /**
+   * Mutation: Set Company
+   * @params company: Company
+   */
   @Mutation
   setCompany (company: Company) {
     this.company = company
   }
 
-  // actions
+  /**
+   * Action: Get users from api
+   */
   @Action
   async getUsers () {
     const userApi = new UserApi()

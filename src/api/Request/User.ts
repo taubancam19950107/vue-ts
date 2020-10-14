@@ -1,18 +1,26 @@
 import { apiConfig } from '../config'
 import { AxiosResponse } from 'axios'
 import { Api } from '@/api/Api'
-import { UserList } from './Interfaces'
+import UserList from '@/api/Response/UserList'
 
+/**
+ * Export class UserApi
+ */
 export class UserApi extends Api {
+  /**
+   * Constructor
+   */
   public constructor () {
     super(apiConfig)
-
-    this.getUsers = this.getUsers.bind(this)
   }
 
+  /**
+   * Get users
+   * @returns Promise<UserList>|Error
+   */
   public async getUsers (): Promise<UserList> {
     try {
-      const res: AxiosResponse<UserList> = await this.get<UserList, AxiosResponse<UserList>>('/users')
+      const res: AxiosResponse<UserList> = await this.get('/users')
       return this.success(res)
     } catch (error) {
       throw error

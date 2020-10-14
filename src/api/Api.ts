@@ -199,6 +199,9 @@ export class Api {
       return response.data
     }
 
+    /**
+     * throw Error
+     */
     public error (error: AxiosError<Error>) {
       throw error
     }

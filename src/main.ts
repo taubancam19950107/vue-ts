@@ -3,7 +3,7 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
-import index from './i18n'
+import i18n from './i18n'
 import '@/assets/scss/main.scss'
 
 // UI design components
@@ -15,7 +15,7 @@ Vue.use(Antd)
 Vue.config.productionTip = false
 
 new Vue({
-  i18n: index,
+  i18n: i18n,
   router,
   store,
   render: h => h(App)
