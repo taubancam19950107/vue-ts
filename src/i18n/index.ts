@@ -22,7 +22,7 @@ const messages = {
  *
  * @type {VueI18n}
  */
-const index = new VueI18n({
+const vueI18n = new VueI18n({
   locale: locale,
   fallbackLocale: DEFAULT_LANGUAGE,
   messages,
@@ -30,14 +30,14 @@ const index = new VueI18n({
 })
 
 /**
- * Function helper translation language.
+ * Translation language.
  *
- * @param key
- * @param params
+ * @param string key
+ * @param array|undefined params
  * @returns {VueI18n.TranslateResult}
  */
-export const trans = (key: string, params: []) => {
-  return index.t(key, params)
+export function trans (key: string, params?: []) {
+  return vueI18n.t(key, params)
 }
 
-export default index
+export default vueI18n

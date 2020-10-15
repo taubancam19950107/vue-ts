@@ -1,8 +1,10 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 
+import isEmpty from 'lodash/isEmpty'
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
 import { API_URL } from '@/config/constants'
 import { push } from '@/router/index'
+import { getToken } from '@/utils/storage'
 /**
  * @class Api
  * @extends {Axios}
@@ -19,10 +21,22 @@ export class Api {
     public constructor (config?: AxiosRequestConfig) {
       this.api = axios.create(config)
 
-      this.api.interceptors.request.use((param: AxiosRequestConfig) => ({
-        baseUrl: API_URL,
-        ...param
-      }))
+      this.api.interceptors.request.use((config: AxiosRequestConfig) => {
+        const accessToken = getToken()
+
+        if (!isEmpty(accessToken)) {
+          const headers = {
+            Authorization: `Bearer ${accessToken}`
+          }
+
+          config.headers = Object.assign(config.headers, headers)
+        }
+
+        return {
+          baseUrl: API_URL,
+          ...config
+        }
+      })
 
       this.api.interceptors.response.use((param: AxiosResponse) => ({
         ...param
@@ -45,15 +59,6 @@ export class Api {
 
         return Promise.reject(error.response && error.response.data)
       })
-
-      this.getUri = this.getUri.bind(this)
-      this.request = this.request.bind(this)
-      this.get = this.get.bind(this)
-      this.delete = this.delete.bind(this)
-      this.head = this.head.bind(this)
-      this.post = this.post.bind(this)
-      this.put = this.put.bind(this)
-      this.patch = this.patch.bind(this)
     }
 
     /**

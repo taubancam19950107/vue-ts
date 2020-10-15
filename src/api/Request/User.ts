@@ -11,6 +11,7 @@ export class UserApi extends Api {
    * Constructor
    */
   public constructor () {
+    // apiConfig.baseURL = 'https://gorest.co.in/public-api'
     super(apiConfig)
   }
 

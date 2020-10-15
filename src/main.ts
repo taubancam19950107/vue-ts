@@ -5,6 +5,8 @@ import router from './router'
 import store from './store'
 import i18n from './i18n'
 import '@/assets/scss/main.scss'
+import './filter'
+import './directive'
 
 // UI design components
 // https://github.com/vueComponent/ant-design-vue

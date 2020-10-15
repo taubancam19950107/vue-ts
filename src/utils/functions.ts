@@ -3,7 +3,7 @@
  * @param {string} filename - File name
  * @return string - File extension. ex: mp4
  */
-const getFileExtension = (filename: string) => {
+export function getFileExtension (filename: string) {
   const parts = filename.split('.')
   return parts[parts.length - 1]
 }
@@ -13,7 +13,7 @@ const getFileExtension = (filename: string) => {
  * @param {string} filename - File name
  * @return boolean
  */
-const isVideoFile = (filename: string) => {
+export function isVideoFile (filename: string) {
   const ext = getFileExtension(filename)
   switch (ext.toLowerCase()) {
     case 'm4v':
@@ -24,12 +24,4 @@ const isVideoFile = (filename: string) => {
       return true
   }
   return false
-}
-
-/**
- * Export modules
- */
-export {
-  getFileExtension,
-  isVideoFile
 }

@@ -1,8 +1,8 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
-    <h4 class="fs-24">Api + Store1</h4>
-    <ul style="padding: 0;">
+    <h4 class="fs-24" v-round>Api + Store</h4>
+    <ul style="padding: 0;" v-round>
       <li v-for="(user, index) in users" :key="index" style="list-style: none;">
         {{ user.first_name }} {{ user.last_name }}
       </li>
@@ -26,7 +26,7 @@ export default class About extends Vue {
   input: string | null = null
 
   /**
-  * Get users list
+  * Get reverse users list
   * @returns [User] - Users list
   */
   get users () {

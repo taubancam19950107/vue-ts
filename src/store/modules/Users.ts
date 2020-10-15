@@ -1,4 +1,3 @@
-// user-module.ts
 import { VuexModule, Module, Mutation, Action } from 'vuex-class-modules'
 import { UserApi } from '@/api/Request/User'
 import store from '../index'
@@ -36,7 +35,7 @@ class UsersModule extends VuexModule {
 
   /**
    * Mutation: Set users
-   * @params User[] - User list
+   * @param User[] - User list
    */
   @Mutation
   setUsers (users: User[]) {
@@ -45,7 +44,7 @@ class UsersModule extends VuexModule {
 
   /**
    * Mutation: Set Company
-   * @params company: Company
+   * @param company: Company
    */
   @Mutation
   setCompany (company: Company) {
@@ -57,6 +56,8 @@ class UsersModule extends VuexModule {
    */
   @Action
   async getUsers () {
+    if (this.users.length > 0) return
+
     const userApi = new UserApi()
     const users = await userApi.getUsers()
     this.setUsers(users.data)
