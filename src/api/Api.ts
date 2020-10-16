@@ -1,7 +1,5 @@
-/* eslint-disable  @typescript-eslint/no-explicit-any */
-
 import isEmpty from 'lodash/isEmpty'
-import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
+import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
 import { API_URL } from '@/config/constants'
 import { push } from '@/router/index'
 import { getToken } from '@/utils/storage'
@@ -11,7 +9,7 @@ import { getToken } from '@/utils/storage'
  * @example
  */
 export class Api {
-    [x: string]: any
+    private api: AxiosInstance;
     /**
      * Creates an instance of Api.
      *
@@ -69,7 +67,7 @@ export class Api {
      * @memberof Api
      */
     public getUri (config?: AxiosRequestConfig): string {
-      return this.api.api.getUri(config)
+      return this.api.getUri(config)
     }
 
     /**
@@ -94,7 +92,7 @@ export class Api {
      *
      */
     public request<T, R = AxiosResponse<T>> (config: AxiosRequestConfig): Promise<R> {
-      return this.api.api.request(config)
+      return this.api.request(config)
     }
 
     /**

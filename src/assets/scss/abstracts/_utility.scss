@@ -2,49 +2,12 @@
 //
 
 //------------------------------------| border |------------------------------------
-.border { border: $border-width solid $border-color !important; }
-.border-top { border-top: $border-width solid $border-color !important; }
-.border-right { border-right: $border-width solid $border-color !important; }
-.border-bottom { border-bottom: $border-width solid $border-color !important; }
-.border-left { border-left: $border-width solid $border-color !important; }
-
 @for $value from 1 through 3 {
   .border-#{$value + 1} { border: $value + 1px solid !important; }
   .border-top-#{$value + 1} { border-top: $value + 1px solid !important; }
   .border-right-#{$value + 1} { border-right: $value + 1px solid !important; }
   .border-bottom-#{$value + 1} { border-bottom: $value + 1px solid !important; }
   .border-left-#{$value + 1} { border-left: $value + 1px solid !important; }
-}
-
-@each $color, $value in $color {
-  .border-#{$color} {
-    border-color: $value !important;
-  }
-}
-
-//------------------------------------| Border-radius |------------------------------------
-.rounded {
-  border-radius: $border-radius !important;
-}
-
-.rounded-top {
-  border-top-left-radius: $border-radius !important;
-  border-top-right-radius: $border-radius !important;
-}
-
-.rounded-right {
-  border-top-right-radius: $border-radius !important;
-  border-bottom-right-radius: $border-radius !important;
-}
-
-.rounded-bottom {
-  border-bottom-right-radius: $border-radius !important;
-  border-bottom-left-radius: $border-radius !important;
-}
-
-.rounded-left {
-  border-top-left-radius: $border-radius !important;
-  border-bottom-left-radius: $border-radius !important;
 }
 
 @for $value from 4 through 6 {
@@ -63,10 +26,6 @@
 
 .rounded-circle {
   border-radius: 50% !important;
-}
-
-.rounded-pill {
-  border-radius: $rounded-pill !important;
 }
 
 .rounded-0 {
@@ -178,18 +137,6 @@
   text-underline-position: under !important;
 }
 
-.p-absolute {
-  @include position(absolute);
-}
-
-.p-relative {
-  @include position(relative);
-}
-
-.p-fixed {
-  @include position(fixed);
-}
-
 .text-left {
   text-align: left !important;
 }
@@ -204,12 +151,6 @@
 
 .pre-line {
   white-space: pre-line;
-}
-
-//------------------------------------| set color |------------------------------------
-
-.text-danger {
-  color: $red-6 !important;
 }
 
 //------------------------------------| Helper |------------------------------------
@@ -235,6 +176,14 @@
 
 .position-relative {
   position: relative !important;
+}
+
+.position-absolute {
+  position: absolute !important;
+}
+
+.position-fixed {
+  position: fixed !important;
 }
 
 .w-100 {

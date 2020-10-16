@@ -25,6 +25,15 @@ module.exports = {
       importWorkboxFrom: 'local',
     },
   },
+  css: {
+    loaderOptions: {
+      less: {
+        lessOptions: {
+          javascriptEnabled: true
+        }
+      }
+    }
+  },
   devServer: {
     // host: 'web-template.ts',
     // port: 8888,

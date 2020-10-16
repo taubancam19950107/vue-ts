@@ -11,7 +11,7 @@ import './directive'
 // UI design components
 // https://github.com/vueComponent/ant-design-vue
 import Antd from 'ant-design-vue'
-import 'ant-design-vue/dist/antd.css'
+import './theme/index.less'
 Vue.use(Antd)
 
 Vue.config.productionTip = false
