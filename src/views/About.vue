@@ -7,24 +7,14 @@
       </li>
     </ul>
     <h4 class="fs-24"><a href="https://www.antdv.com/docs/vue/introduce/" target="_blank">Ant Design of Vue</a></h4>
-    <a-row class="mb-10">
-      <a-input placeholder="Basic usage" v-model="input" style="width: 200px;"/>
-    </a-row>
-    <a-space :size="10">
-      <a-button type="primary">
-        Primary
-      </a-button>
-      <a-button>Default</a-button>
-      <a-button type="dashed">
-        Dashed
-      </a-button>
-      <a-button type="danger">
-        Danger
-      </a-button>
-      <a-button type="link">
-        Link
-      </a-button>
-    </a-space>
+    <el-row>
+      <el-button>Default</el-button>
+      <el-button type="primary">Primary</el-button>
+      <el-button type="success">Success</el-button>
+      <el-button type="info">Info</el-button>
+      <el-button type="warning">Warning</el-button>
+      <el-button type="danger">Danger</el-button>
+    </el-row>
   </div>
 </template>
 
@@ -37,8 +27,6 @@ import { userModule } from '@/store/modules/Users'
  * Create component
  */
 export default class About extends Vue {
-  input: string | null = null
-
   /**
   * Get reverse users list
   * @returns [User] - Users list

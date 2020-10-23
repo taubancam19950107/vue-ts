@@ -9,10 +9,10 @@ import './filter'
 import './directive'
 
 // UI design components
-// https://github.com/vueComponent/ant-design-vue
-import Antd from 'ant-design-vue'
-import './theme/index.less'
-Vue.use(Antd)
+// https://element.eleme.io/#/en-US/component/quickstart
+import ElementUi from 'element-ui'
+import '@/theme/index.scss'
+Vue.use(ElementUi)
 
 Vue.config.productionTip = false
 

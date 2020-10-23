@@ -37,6 +37,7 @@ module.exports = {
   devServer: {
     // host: 'web-template.ts',
     // port: 8888,
-    https: true
+    https: true,
+    open: true
   }
 }

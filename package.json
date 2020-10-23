@@ -13,10 +13,10 @@
   },
   "dependencies": {
     "@types/lodash": "^4.14.159",
-    "ant-design-vue": "^1.6.4",
     "axios": "^0.19.2",
     "babel-plugin-module-resolver": "^4.0.0",
     "core-js": "^3.6.5",
+    "element-ui": "^2.13.2",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
@@ -84,7 +84,7 @@
     ]
   },
   "engines": {
-    "node": "=11.15.0",
+    "node": ">=12",
     "npm": ">=6.0.0"
   }
 }
