@@ -4,7 +4,7 @@
  * @param string value
  * @returns void
  */
-export function setCookie (name: string, val: string) {
+export function setCookie(name: string, val: string) {
   const date = new Date()
   const value = val
 
@@ -20,7 +20,7 @@ export function setCookie (name: string, val: string) {
  * @param string name
  * @returns string value
  */
-export function getCookie (name: string) {
+export function getCookie(name: string) {
   const value = '; ' + document.cookie
   const parts = value.split('; ' + name + '=')
 
@@ -34,7 +34,7 @@ export function getCookie (name: string) {
  * @param string name
  * @returns void
  */
-export function deleteCookie (name: string) {
+export function deleteCookie(name: string) {
   const date = new Date()
 
   // Set it expire in -1 days

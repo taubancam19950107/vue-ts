@@ -5,7 +5,7 @@ import { STORAGE } from '@/config/constants'
  * Get token cookie
  * @returns string token
  */
-export function getToken () {
+export function getToken() {
   return getCookie(STORAGE.TOKEN)
 }
 
@@ -14,7 +14,7 @@ export function getToken () {
  * @param string token
  * @returns void
  */
-export function setToken (token: string) {
+export function setToken(token: string) {
   setCookie(STORAGE.TOKEN, token)
 }
 
@@ -22,6 +22,6 @@ export function setToken (token: string) {
  * Delete token cookie
  * @returns void
  */
-export function deleteToken () {
+export function deleteToken() {
   deleteCookie(STORAGE.TOKEN)
 }

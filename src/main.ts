@@ -4,14 +4,14 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import i18n from './i18n'
-import '@/assets/scss/main.scss'
+import './styles/main.scss'
 import './filter'
 import './directive'
 
 // UI design components
 // https://element.eleme.io/#/en-US/component/quickstart
 import ElementUi from 'element-ui'
-import '@/theme/index.scss'
+import '@/styles/element-variables.scss'
 Vue.use(ElementUi)
 
 Vue.config.productionTip = false

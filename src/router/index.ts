@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig, RawLocation } from 'vue-router'
+import AuthLayout from '@/layouts/AuthLayout.vue'
 import HomeLayout from '@/layouts/HomeLayout.vue'
 import { setDocumentTitle } from '@/utils/dom'
 import { PAGE_TITLE } from '@/config/constants'
@@ -9,23 +10,40 @@ Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
   {
+    path: '/auth',
+    component: AuthLayout,
+    children: [
+      {
+        path: 'login',
+        name: 'login',
+        component: () => import('@/views/Login.vue'),
+        meta: {
+          title: trans('label.login')
+        }
+      }
+    ]
+  },
+  {
     path: '/',
     component: HomeLayout,
+    meta: {
+      auth: true
+    },
     children: [
       {
         path: '',
-        name: 'Home',
+        name: 'home',
         component: () => import('@/views/Home.vue'),
         meta: {
           title: trans('label.homepage')
         }
       },
       {
-        path: 'about',
-        name: 'About',
-        component: () => import('@/views/About.vue'),
+        path: 'example',
+        name: 'example',
+        component: () => import('@/views/Example.vue'),
         meta: {
-          title: trans('label.about')
+          title: 'Example'
         }
       }
     ]

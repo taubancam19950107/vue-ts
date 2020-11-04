@@ -1,5 +1,8 @@
 export default class Firebase {
-  constructor (config) {
+  /**
+   * Constructor
+   */
+  constructor(config) {
     this.messaging = null
     window.firebase.initializeApp(config)
   }
@@ -11,7 +14,7 @@ export default class Firebase {
   * https://firebase.google.com/docs/reference/js/firebase.messaging.Messaging#requestpermission
   * @returns {Promise}
   */
-  requestNotificationPermission () {
+  requestNotificationPermission() {
     this.messaging = window.firebase.messaging()
     return this.messaging.requestPermission()
   }
@@ -22,7 +25,7 @@ export default class Firebase {
   * https://firebase.google.com/docs/reference/js/firebase.messaging.Messaging#gettoken
   * @returns {string} Device token
   */
-  getToken () {
+  getToken() {
     return this.messaging.getToken()
   }
 }

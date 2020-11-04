@@ -36,7 +36,7 @@ const vueI18n = new VueI18n({
  * @param array|undefined params
  * @returns {VueI18n.TranslateResult}
  */
-export function trans (key: string, params?: []) {
+export function trans(key: string, params?: []) {
   return vueI18n.t(key, params)
 }
 

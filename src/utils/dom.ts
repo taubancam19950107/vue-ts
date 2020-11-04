@@ -2,7 +2,7 @@
  * Set document title
  * @returns void
  */
-export function setDocumentTitle (title: string) {
+export function setDocumentTitle(title: string) {
   document.title = title
   const ua = navigator.userAgent
   // eslint-disable-next-line
