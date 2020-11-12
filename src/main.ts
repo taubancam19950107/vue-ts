@@ -5,8 +5,8 @@ import router from './router'
 import store from './store'
 import i18n from './i18n'
 import './styles/main.scss'
-import './filter'
-import './directive'
+import './filters'
+import './directives'
 
 // UI design components
 // https://element.eleme.io/#/en-US/component/quickstart
